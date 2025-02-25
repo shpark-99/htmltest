@@ -3,27 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>설문 생성 (관리자)</title>
+    <title>설문 편집 (관리자)</title>
 
-    <!-- CSS 파일 -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- 카카오 맵 API -->
     <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=a50e768349b68eac92037c8858d7a462&libraries=services,geometry"></script>
 </head>
 <body>
 
-    <h2>📍 설문 위치 설정 (관리자 페이지)</h2>
+    <div class="survey-container">
+        <div class="header">
+            <h2 class="survey-title">설문 편집</h2>
+        </div>
 
-    <div>
-        <input type="text" id="addressInput" placeholder="기준 위치 주소 입력">
-        <button onclick="setBaseLocation()">📍 기준 위치 설정</button>
+        <div class="form-section">
+            <div class="question-section">
+                <div class="question-header">
+                    <h3>문항 편집</h3>
+                </div>
+
+                <!-- 기존 1번 문항 -->
+                <div class="question-content">
+                    <div class="question-number">1</div>
+                    <div class="question-text">질문을 입력하십시오.</div>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="q1" id="option1">
+                            <label for="option1">보기를 입력하십시오.</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="q1" id="option2">
+                            <label for="option2">보기를 입력하십시오.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 위치 설정 문항 -->
+                <div class="question-content">
+                    <div class="question-number">2</div>
+                    <div class="question-text">📍 위치 인증을 위한 기준 위치 설정</div>
+                    <input type="text" id="addressInput" placeholder="기준 위치 주소 입력">
+                    <button onclick="setBaseLocation()">📍 기준 위치 설정</button>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="saveSurvey()">💾 설문 저장</button>
     </div>
-
-    <br>
-    <div id="map"></div>
-    
-    <button onclick="saveSurvey()">💾 설문 저장</button>
 
     <script src="admin.js"></script>
 
