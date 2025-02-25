@@ -9,10 +9,35 @@
 </head>
 <body>
 
-    <h2>📍 설문 위치 인증</h2>
+    <div class="survey-container">
+        <h2 class="survey-title">설문 응답</h2>
 
-    <button onclick="verifyMyLocation()">내 위치 인증</button>
-    <p id="statusMessage">⏳ 위치 인증 대기 중...</p>
+        <!-- 문항 1 -->
+        <div class="question-content">
+            <div class="question-number">1</div>
+            <div class="question-text">질문을 입력하십시오.</div>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" name="q1" id="option1">
+                    <label for="option1">보기를 입력하십시오.</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q1" id="option2">
+                    <label for="option2">보기를 입력하십시오.</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 위치 인증 문항 -->
+        <div class="question-content">
+            <div class="question-number">2</div>
+            <div class="question-text">📍 위치 인증을 진행해주세요.</div>
+            <button onclick="verifyMyLocation()">내 위치 인증</button>
+            <p id="statusMessage">⏳ 위치 인증 대기 중...</p>
+        </div>
+
+        <button onclick="submitSurvey()">📤 제출</button>
+    </div>
 
     <script src="survey.js"></script>
 
